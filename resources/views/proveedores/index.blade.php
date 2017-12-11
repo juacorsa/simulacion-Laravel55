@@ -85,6 +85,5 @@
 
     {!! Session::forget('flash_titulo') !!}
     {!! Session::forget('flash_tipo') !!}
-    {!! Session::forget('flash_mensaje') !!}    
-	{{ LaraFlash::notifications() }} 
+    {!! Session::forget('flash_mensaje') !!}    	
 @endsection

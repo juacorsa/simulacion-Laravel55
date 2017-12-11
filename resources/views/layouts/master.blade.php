@@ -31,7 +31,7 @@
                         <a href="{{ route('proveedores.index') }}"><i class="fa fa-users"></i> Proveedores</a>
                     </li>
                     <li>
-                        <a href="{{ route('proveedores.index') }}"><i class="fa fa-users"></i> Productos</a>
+                        <a href="{{ route('productos.index') }}"><i class="fa fa-users"></i> Productos</a>
                     </li>
                     <li>
                         <a href="{{ route('proveedores.index') }}"><i class="fa fa-desktop"></i> Servicios</a>
@@ -56,9 +56,7 @@
 
     <div class='container'>
         @yield('contenido')   
-    </div>
-
-    @include('includes.toast-notifications')
+    </div>   
 
     @section('scripts')  
         <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>  
@@ -71,10 +69,4 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/bootbox.js/4.4.0/bootbox.min.js"></script>
     @show
 </body>
-</html>
-
-
-
-
-    
-
+</html>  

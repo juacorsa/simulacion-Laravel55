@@ -14,7 +14,7 @@ class ProveedorRequest extends FormRequest
     public function rules()
     {
         return [
-            'codigo'    => 'required|unique:proveedores,codigo,'.$this->id,
+            'codigo'    => 'required|integer|min:1|unique:proveedores,codigo,'.$this->id,
             'nombre'    => 'required|max:80',
             'direccion' => 'max:80',
             'fax'       => 'max:20',
@@ -30,6 +30,8 @@ class ProveedorRequest extends FormRequest
         return [
             'nombre.required' => 'El nombre es un dato obligatorio.',
             'nombre.max'      => 'El nombre debe tener como máximo :max caracteres.',
+            'codigo.integer'  => 'El código debe ser un número.',
+            'codigo.min'      => 'El código debe ser un número mayor que cero.',            
             'codigo.required' => 'El código es un dato requerido.',
             'codigo.unique'   => 'El código ya existe en la base de datos.',
             'direccion.max'   => 'La dirección debe tener como máximo :max caracteres.',

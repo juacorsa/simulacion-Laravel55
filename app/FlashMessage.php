@@ -19,6 +19,6 @@ class FlashMessage
       Session::flash('flash_swal', 'swal');
       Session::flash('flash_mensaje', $message);
       Session::flash('flash_titulo', $title);                                 
-      Session::flash('flash_tipo', 'success'); 
+      Session::flash('flash_tipo', 'error'); 
    }   
 }
