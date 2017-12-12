@@ -7,12 +7,12 @@ use App\Interfaces\ProductoRepositoryInterface;
 
 class ProductoRepository implements ProductoRepositoryInterface
 {
-	public function obtenerTodos()
+	public function obtenerProductos()
 	{
 		return Producto::orderBy('nombre','asc')->get();
 	}
 
-	public function registrar(array $datos)
+	public function registrarProducto(array $datos)
 	{
 		$producto = new Producto();
 		$producto->nombre = $datos['nombre'];
@@ -20,16 +20,16 @@ class ProductoRepository implements ProductoRepositoryInterface
 		$producto->save();
 	}
 
-	public function actualizar(array $datos)
+	public function actualizarProducto(array $datos)
 	{
 		$id = $datos['id'];
-		$producto = $this->obtener($id);
+		$producto = $this->obtenerProducto($id);
 		$producto->nombre = $datos['nombre'];
 		$producto->codigo = $datos['codigo'];
 		$producto->save();
 	}
 	
-	public function obtener($id)
+	public function obtenerProducto($id)
 	{
 		return Producto::find($id);
 	}

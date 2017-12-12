@@ -6,12 +6,12 @@ use App\Producto;
 
 interface ProductoRepositoryInterface 
 {
-	public function obtenerTodos();
+	public function obtenerProductos();
 
-	public function registrar(array $datos);
+	public function registrarProducto(array $datos);
 
-	public function actualizar(array $datos);
+	public function actualizarProducto(array $datos);
 	
-	public function obtener($id);
+	public function obtenerProducto($id);
 }
 

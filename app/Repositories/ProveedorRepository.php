@@ -7,12 +7,12 @@ use App\Interfaces\ProveedorRepositoryInterface;
 
 class ProveedorRepository implements ProveedorRepositoryInterface
 {
-	public function obtenerTodos()
+	public function obtenerProveedores()
 	{
 		return Proveedor::orderBy('nombre','asc')->get();
 	}
 
-	public function registrar(array $datos)
+	public function registrarProveedor(array $datos)
 	{
 		$proveedor = new Proveedor();
 		$proveedor->nombre = $datos['nombre'];
@@ -26,10 +26,10 @@ class ProveedorRepository implements ProveedorRepositoryInterface
 		$proveedor->save();
 	}
 
-	public function actualizar(array $datos)
+	public function actualizarProveedor(array $datos)
 	{
 		$id = $datos['id'];
-		$proveedor = $this->obtener($id);
+		$proveedor = $this->obtenerProveedor($id);
 		$proveedor->nombre = $datos['nombre'];
 		$proveedor->codigo = $datos['codigo'];
 		$proveedor->direccion = $datos['direccion'];
@@ -41,7 +41,7 @@ class ProveedorRepository implements ProveedorRepositoryInterface
 		$proveedor->save();		
 	}
 	
-	public function obtener($id)
+	public function obtenerProveedor($id)
 	{
 		return Proveedor::find($id);
 	}

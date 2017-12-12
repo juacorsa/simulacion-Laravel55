@@ -20,7 +20,7 @@ class ProductosController extends Controller
 
 	public function index()
 	{
-    	$productos = $this->repositorio->obtenerTodos();        
+    	$productos = $this->repositorio->obtenerProductos();
     	return view('productos.index', compact('productos'));		
 	}
 
@@ -35,7 +35,7 @@ class ProductosController extends Controller
 
         try
         {
-            $this->repositorio->registrar($datos);            
+            $this->repositorio->registrarProducto($datos);            
             FlashMessage::success(Mensaje::PRODUCTO_REGISTRADO, Mensaje::ENHORABUENA);
          	return back();
         }
@@ -48,7 +48,7 @@ class ProductosController extends Controller
 
     public function edit($id)
 	{
-        $producto = $this->repositorio->obtener($id);       
+        $producto = $this->repositorio->obtenerProducto($id);       
 
         if (!$producto) 
         {
@@ -65,9 +65,8 @@ class ProductosController extends Controller
 
         try
         {
-            $this->repositorio->actualizar($datos);
-            FlashMessage::success(Mensaje::PRODUCTO_ACTUALIZADO, Mensaje::ENHORABUENA);
-            //return redirect()->route('productos.index');
+            $this->repositorio->actualizarProducto($datos);
+            FlashMessage::success(Mensaje::PRODUCTO_ACTUALIZADO, Mensaje::ENHORABUENA);            
             return back();
         }
         catch(Exception $e)

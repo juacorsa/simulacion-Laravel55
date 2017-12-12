@@ -20,7 +20,7 @@ class ProveedoresController extends Controller
 
     public function index()
     {
-    	$proveedores = $this->repositorio->obtenerTodos();        
+    	$proveedores = $this->repositorio->obtenerProveedores();
     	return view('proveedores.index', compact('proveedores'));
     }
 
@@ -36,7 +36,7 @@ class ProveedoresController extends Controller
 
         try
         {
-            $this->repositorio->registrar($datos);            
+            $this->repositorio->registrarProveedor($datos);            
             FlashMessage::success(Mensaje::PROVEEDOR_REGISTRADO, Mensaje::ENHORABUENA);
             return back();
         }
@@ -49,7 +49,7 @@ class ProveedoresController extends Controller
 
     public function edit($id)
     {
-        $proveedor = $this->repositorio->obtener($id);       
+        $proveedor = $this->repositorio->obtenerProveedor($id);       
 
         if (!$proveedor) 
         {
@@ -67,7 +67,7 @@ class ProveedoresController extends Controller
 
         try
         {
-            $this->repositorio->actualizar($datos);
+            $this->repositorio->actualizarProveedor($datos);
             FlashMessage::success(Mensaje::PROVEEDOR_ACTUALIZADO, Mensaje::ENHORABUENA);
             return back();
         }

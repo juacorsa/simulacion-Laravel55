@@ -6,12 +6,12 @@ use App\Proveedor;
 
 interface ProveedorRepositoryInterface 
 {
-	public function obtenerTodos();
+	public function obtenerProveedores();
 
-	public function registrar(array $datos);
+	public function registrarProveedor(array $datos);
 
-	public function actualizar(array $datos);
+	public function actualizarProveedor(array $datos);
 	
-	public function obtener($id);
+	public function obtenerProveedor($id);
 }
 
