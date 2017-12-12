@@ -23,7 +23,7 @@
 					@foreach ($productos as $producto)
 					<tr>
 						<td>
-							<a class="btn btn-primary" href="{{ route('proveedor.edit', $producto) }}">
+							<a class="btn btn-primary" href="{{ route('producto.edit', $producto) }}">
 								<i class="fa fa-bars"></i>									
 							</a>						
 						</td>

@@ -21,7 +21,7 @@
 
 <div class="form-group">   		
 	<label class="col-sm-2 control-label">Nombre</label>
-	<div class="col-sm-8">
+	<div class="col-sm-10">
 		{!! Form::text('nombre', null, ['class' => 'form-control', 'autocomplete' => 'off']) !!}  	
 	</div>	
 </div>

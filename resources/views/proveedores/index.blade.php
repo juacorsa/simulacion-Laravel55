@@ -60,30 +60,7 @@
 					{ "width": "10px",  "targets": 1 }
 				]		 					     
 		  	});		  
-		 </script>    	
-    	
-		@if(Session::has('flash_toastr'))	
-			<script type="text/javascript">
-				toastr.{{ Session::get('flash_tipo') }}		
-				('{{ Session::get('flash_mensaje') }}', '{{ Session::get('flash_titulo') }}')
-			</script>
-		@endif		
-
-		@if(Session::has('flash_swal'))	
-			<script type="text/javascript">
-				$(function() {			
-				    swal({
-				        title: "{{ Session::get('flash_titulo') }}",
-				        type: "{{ Session::get('flash_tipo') }}",
-				        text: "{{ Session::get('flash_mensaje') }}"
-				    });
-				});		
-			</script>
-		@endif
-		
+		 </script>    	   			
     @stop
-
-    {!! Session::forget('flash_titulo') !!}
-    {!! Session::forget('flash_tipo') !!}
-    {!! Session::forget('flash_mensaje') !!}    	
+        
 @endsection

@@ -21,49 +21,49 @@
 
 <div class="form-group">   		
 	<label class="col-sm-2 control-label">Nombre</label>
-	<div class="col-sm-8">
+	<div class="col-sm-10">
 		{!! Form::text('nombre', null, ['class' => 'form-control', 'autocomplete' => 'off']) !!}  	
 	</div>	
 </div>
 
 <div class="form-group">   		
 	<label class="col-sm-2 control-label">Dirección</label>
-	<div class="col-sm-8">
+	<div class="col-sm-10">
 		{!! Form::text('direccion', null, ['class' => 'form-control', 'autocomplete' => 'off']) !!}  	
 	</div>	
 </div>
 
 <div class="form-group">   		
 	<label class="col-sm-2 control-label">Población</label>
-	<div class="col-sm-8">
+	<div class="col-sm-10">
 		{!! Form::text('poblacion', null, ['class' => 'form-control', 'autocomplete' => 'off']) !!}  	
 	</div>	
 </div>
 
 <div class="form-group">   		
 	<label class="col-sm-2 control-label">Teléfono</label>
-	<div class="col-sm-8">
+	<div class="col-sm-10">
 		{!! Form::text('telefono', null, ['class' => 'form-control', 'autocomplete' => 'off']) !!}  	
 	</div>	
 </div>
 
 <div class="form-group">   		
 	<label class="col-sm-2 control-label">Fax</label>
-	<div class="col-sm-8">
+	<div class="col-sm-10">
 		{!! Form::text('fax', null, ['class' => 'form-control', 'autocomplete' => 'off']) !!}  	
 	</div>	
 </div>
 
 <div class="form-group">   		
 	<label class="col-sm-2 control-label">Contacto</label>
-	<div class="col-sm-8">
+	<div class="col-sm-10">
 		{!! Form::text('contacto', null, ['class' => 'form-control', 'autocomplete' => 'off']) !!}  	
 	</div>	
 </div>
 
 <div class="form-group">   		
 	<label class="col-sm-2 control-label">Email</label>
-	<div class="col-sm-8">
+	<div class="col-sm-10">
 		{!! Form::text('email', null, ['class' => 'form-control', 'autocomplete' => 'off']) !!}  	
 	</div>	
 </div>

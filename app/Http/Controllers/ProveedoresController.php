@@ -38,7 +38,7 @@ class ProveedoresController extends Controller
         {
             $this->repositorio->registrar($datos);            
             FlashMessage::success(Mensaje::PROVEEDOR_REGISTRADO, Mensaje::ENHORABUENA);
-            return redirect()->route('proveedores.index');
+            return back();
         }
         catch(Exception $e)
         {
@@ -69,7 +69,7 @@ class ProveedoresController extends Controller
         {
             $this->repositorio->actualizar($datos);
             FlashMessage::success(Mensaje::PROVEEDOR_ACTUALIZADO, Mensaje::ENHORABUENA);
-            return redirect()->route('proveedores.index');
+            return back();
         }
         catch(Exception $e)
         {

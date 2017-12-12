@@ -13,9 +13,11 @@
 			@include('productos.partials.fields')		
 
 			<div class="form-group">
-	        	<div class="col-sm-offset-2 col-sm-8">				
+	        	<div class="col-sm-offset-2 col-sm-10">				
 					<button class="btn btn-primary" type="submit">
-						<i class="fa fa-plus"></i> Registrar producto</button>				
+						<i class="fa fa-plus"></i> Registrar producto</button>	
+						<a class="btn btn-danger" href="{{ route('productos.index') }}">
+							<i class="fa fa-check"></i> Volver al listado de productos</a>
 	            </div>
         	</div>
 

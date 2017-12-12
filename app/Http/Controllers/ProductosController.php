@@ -48,13 +48,32 @@ class ProductosController extends Controller
 
     public function edit($id)
 	{
+        $producto = $this->repositorio->obtener($id);       
+
+        if (!$producto) 
+        {
+            FlashMessage::error(Mensaje::PRODUCTO_NO_ENCONTRADO, Mensaje::ERROR);                        
+            return back();            
+        }
+
+        return view('productos.edit', compact('producto'));              
 	}
 
     public function update(ProductoRequest $request)
 	{
+        $datos = $request->only(['nombre', 'codigo', 'id']);
+
+        try
+        {
+            $this->repositorio->actualizar($datos);
+            FlashMessage::success(Mensaje::PRODUCTO_ACTUALIZADO, Mensaje::ENHORABUENA);
+            //return redirect()->route('productos.index');
+            return back();
+        }
+        catch(Exception $e)
+        {
+            FlashMessage::error(Mensaje::PRODUCTO_NO_ACTUALIZADO, Mensaje::ERROR);            
+            return back();
+        }        
 	}
-
-
-
-
 }
