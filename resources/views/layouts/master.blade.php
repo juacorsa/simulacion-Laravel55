@@ -12,6 +12,7 @@
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/6.9.1/sweetalert2.min.css">
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css">
     <link rel="stylesheet" href="https://cdn.datatables.net/1.10.12/css/dataTables.bootstrap.min.css">
+    <link href="{{ asset('/css/parsley.css') }}" rel="stylesheet" type="text/css">    
 </head>
 <body>
     <nav class="navbar navbar-default">
@@ -65,7 +66,7 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>  
         <script src="//cdn.datatables.net/1.10.12/js/jquery.dataTables.min.js"></script>
         <script src="https://cdn.datatables.net/1.10.12/js/dataTables.bootstrap.min.js"></script>
-        <script src="{{ asset('/js/datatable-config.js') }}"></script>
+        <script src="{{ asset('/js/datatable-config.js') }}"></script>        
         <script src="https://cdnjs.cloudflare.com/ajax/libs/bootbox.js/4.4.0/bootbox.min.js"></script>
     @show
 </body>

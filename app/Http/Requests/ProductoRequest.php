@@ -22,7 +22,7 @@ class ProductoRequest extends FormRequest
     public function messages()
     {
         return [
-            'nombre.required' => 'El nombre es un dato obligatorio.',
+            'nombre.required' => 'El nombre es un dato requerido.',
             'nombre.max'      => 'El nombre debe tener como máximo :max caracteres.',            
             'codigo.required' => 'El código es un dato requerido.',
             'codigo.unique'   => 'El código ya existe en la base de datos.',
