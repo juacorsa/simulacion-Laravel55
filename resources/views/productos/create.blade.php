@@ -38,8 +38,8 @@
 				$(function() {			
 				    swal({
 				        title: "{{ Session::get('flash_titulo') }}",
-				        type: "{{ Session::get('flash_tipo') }}",
-				        text: "{{ Session::get('flash_mensaje') }}"
+				        type : "{{ Session::get('flash_tipo') }}",
+				        text : "{{ Session::get('flash_mensaje') }}"
 				    });
 				});		
 			</script>

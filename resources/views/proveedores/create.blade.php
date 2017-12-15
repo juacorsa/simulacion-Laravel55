@@ -8,7 +8,7 @@
 	</p>
 	<hr/>
 	<div class="col-sm-6">
-		{!! Form::open(['class' => 'form-horizontal', 'route' => 'proveedor.store', 'method' => 'POST']) !!}
+		{!! Form::open(['class' => 'form-horizontal', 'route' => 'proveedor.store', 'method' => 'POST', 'data-parsley-validate' => '']) !!}
 
 			@include('proveedores.partials.fields')		
 
@@ -43,7 +43,18 @@
 				    });
 				});		
 			</script>
-		@endif		
+		@endif	
+
+		<script>
+		    window.ParsleyConfig = {
+		        errorsWrapper: '<div></div>',
+		        errorTemplate: '<div class="error" role="alert"></div>',
+		        errorClass   : 'has-error',
+		        successClass : 'has-success'
+		    };
+		</script>
+
+		<script src="http://parsleyjs.org/dist/parsley.js"></script>			
     @stop	
 
 @endsection
