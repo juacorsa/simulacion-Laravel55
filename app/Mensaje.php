@@ -21,5 +21,9 @@ class Mensaje
    const PRODUCTO_NO_ACTUALIZADO = 'Ha sido imposible actualizar el producto seleccionado';
    const PRODUCTO_ACTUALIZADO    = 'Producto actualizado correctamente';
 
+   const MATERIA_PRIMA_REGISTRADA     = 'Materia prima registrada con éxito';
+   const MATERIA_PRIMA_NO_REGISTRADA  = 'Ha sido imposible registrar una nueva materia prima';
+   
+
    
 }

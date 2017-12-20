@@ -35,7 +35,7 @@
                         <a href="{{ route('productos.index') }}"><i class="fa fa-users"></i> Productos</a>
                     </li>
                     <li>
-                        <a href="{{ route('proveedores.index') }}"><i class="fa fa-desktop"></i> Servicios</a>
+                        <a href="{{ route('materiasprimas.index') }}"><i class="fa fa-desktop"></i> Materias Primas</a>
                     </li>
                     <li>
                         <a href="{{ route('proveedores.index') }}"><i class="fa fa-user"></i> Empresas</a>

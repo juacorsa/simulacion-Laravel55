@@ -20,3 +20,9 @@ Route::get('/producto', 'ProductosController@create')->name('producto.create');
 Route::post('/productos','ProductosController@store')->name('producto.store');
 Route::get('/producto/{id}', 'ProductosController@edit')->name('producto.edit');
 Route::put('/producto', 'ProductosController@update')->name('producto.update');
+
+// Rutas de materias primas
+Route::get('/materiasprimas', 'MateriaPrimasController@index')->name('materiasprimas.index');
+Route::get('/materiaprima', 'MateriaPrimasController@create')->name('materiaprima.create');
+Route::post('/materiasprimas','MateriaPrimasController@store')->name('materiaprima.store');
+Route::get('/materiaprima/{id}', 'MateriaPrimasController@edit')->name('materiaprima.edit');

@@ -103,7 +103,7 @@
 			'autocomplete' => 'off',
 			'data-parsley-trigger'   => 'change focusout',			
 			'data-parsley-maxlength' => '40',
-			'data-parsley-maxlength-message' => 'El contacto debe tener como máximo 40 caracteres'					
+			'data-parsley-maxlength-message' => 'El contacto debe tener como máximo 40 caracteres'				
 			]) !!}  	
 	</div>	
 </div>
