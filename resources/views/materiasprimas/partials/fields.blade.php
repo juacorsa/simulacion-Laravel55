@@ -107,11 +107,9 @@
 
 <div class="form-group">   		
 	<label class="col-sm-2 control-label">Proveedor</label>
-	<div class="col-sm-8">
-		<select class="form-control" name="proveedor_id">
- 			@foreach($proveedores as $proveedor)
-          		<option value="{{$proveedor->id}}">{{$proveedor->nombre}}</option>
-      		@endforeach				
-		</select>
+	<div class="col-sm-8">		
+		{!! Form::select('proveedor_id', $proveedores, null, array('class' => 'form-control')) !!}	     		
 	</div>	
 </div>
+
+

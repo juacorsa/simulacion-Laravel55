@@ -23,7 +23,9 @@ class Mensaje
 
    const MATERIA_PRIMA_REGISTRADA     = 'Materia prima registrada con éxito';
    const MATERIA_PRIMA_NO_REGISTRADA  = 'Ha sido imposible registrar una nueva materia prima';
-   
+   const MATERIA_PRIMA_NO_ENCONTRADA  = 'Ha sido imposible encontrar la materia prima seleccionada';
+   const MATERIA_PRIMA_NO_ACTUALIZADA = 'Ha sido imposible actualizar la materia prima seleccionada';
+   const MATERIA_PRIMA_ACTUALIZADA    = 'Materia prima actualizada correctamente';
 
    
 }

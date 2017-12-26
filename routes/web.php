@@ -26,3 +26,4 @@ Route::get('/materiasprimas', 'MateriaPrimasController@index')->name('materiaspr
 Route::get('/materiaprima', 'MateriaPrimasController@create')->name('materiaprima.create');
 Route::post('/materiasprimas','MateriaPrimasController@store')->name('materiaprima.store');
 Route::get('/materiaprima/{id}', 'MateriaPrimasController@edit')->name('materiaprima.edit');
+Route::put('/materiaprima', 'materiaPrimasController@update')->name('materiaprima.update');

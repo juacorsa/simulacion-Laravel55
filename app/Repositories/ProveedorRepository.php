@@ -12,6 +12,11 @@ class ProveedorRepository implements ProveedorRepositoryInterface
 		return Proveedor::orderBy('nombre','asc')->get();
 	}
 
+	public function obtenerProveedoresPluck()
+	{
+		return Proveedor::pluck('nombre', 'id');   
+	}
+
 	public function registrarProveedor(array $datos)
 	{
 		$proveedor = new Proveedor();
