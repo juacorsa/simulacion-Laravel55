@@ -16,7 +16,8 @@ class MateriaPrimasController extends Controller
  	private $repoProveedores;
 
 	public function __construct(MateriaPrimaRepositoryInterface $repoMateriasPrimas, ProveedorRepositoryInterface $repoProveedores)
-	{		    
+	{	
+        $this->middleware('auth'); 	    
 		$this->repoMateriasPrimas = $repoMateriasPrimas;        
 		$this->repoProveedores    = $repoProveedores;
 	}    

@@ -15,6 +15,7 @@
     <link href="{{ asset('/css/parsley.css') }}" rel="stylesheet" type="text/css">    
 </head>
 <body>
+    @auth
     <nav class="navbar navbar-default">
         <div class="container-fluid">
             <div class="navbar-header">
@@ -23,11 +24,11 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
-                </button>
-                <a class="navbar-brand" href="#">Simulación</a>
+                </button>         
+                <a class="navbar-brand" href="#">Simulación</a>                
             </div>
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                <ul class="nav navbar-nav">                    
+                <ul class="nav navbar-nav">                                        
                     <li>
                         <a href="{{ route('proveedores.index') }}"><i class="fa fa-users"></i> Proveedores</a>
                     </li>
@@ -39,22 +40,17 @@
                     </li>
                     <li>
                         <a href="{{ route('proveedores.index') }}"><i class="fa fa-user"></i> Empresas</a>
-                    </li>
+                    </li>                    
                 </ul> 
-                <ul class="nav navbar-nav navbar-right">                
-                    <li>
-                        <a href=""><i class="fa fa-user"></i> Opcion</a>
-                    </li> 
-                    @auth
+                <ul class="nav navbar-nav navbar-right">                                    
                     <li>
                         <a href="{{ route('logout') }}"><i class="fa fa-times"></i> Cerrar sesión</a>
-                    </li>                     
-                    @endauth                                 
+                    </li>                                         
                 </ul>               
             </div>
         </div>
     </nav>
-
+    @endauth
     <div class='container'>
         @yield('contenido')   
     </div>   

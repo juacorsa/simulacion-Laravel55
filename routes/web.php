@@ -1,11 +1,8 @@
 <?php
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('auth.login');
 });
-
-Auth::routes();
-Route::get('/home', 'HomeController@index')->name('home');
 
 // Rutas de proveedores
 Route::get('/proveedores', 'ProveedoresController@index')->name('proveedores.index');
@@ -27,3 +24,7 @@ Route::get('/materiaprima', 'MateriaPrimasController@create')->name('materiaprim
 Route::post('/materiasprimas','MateriaPrimasController@store')->name('materiaprima.store');
 Route::get('/materiaprima/{id}', 'MateriaPrimasController@edit')->name('materiaprima.edit');
 Route::put('/materiaprima', 'materiaPrimasController@update')->name('materiaprima.update');
+
+
+Auth::routes();
+Route::get('logout', '\App\Http\Controllers\Auth\LoginController@logout');

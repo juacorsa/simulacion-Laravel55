@@ -14,7 +14,8 @@ class ProveedoresController extends Controller
 	private $repositorio;
     
 	public function __construct(ProveedorRepositoryInterface $repositorio)
-	{		    
+	{		
+        $this->middleware('auth'); 
 		$this->repositorio = $repositorio;        
 	}
 

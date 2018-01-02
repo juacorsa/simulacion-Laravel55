@@ -75,7 +75,9 @@
 		{!! Form::text('reanalisis', null, [
 			'class' 	   => 'form-control', 
 			'autocomplete' => 'off',
-			'placeholder'  => 'mm/aaaa'
+			'placeholder'  => 'mm/aaaa',
+			'data-parsley-maxlength' => '10',
+			'data-parsley-maxlength-message' => 'El re-análisis debe tener como máximo 10 caracteres'
 			]) !!}  	
 	</div>	
 </div>
@@ -101,6 +103,8 @@
 			'class' 	   => 'form-control', 
 			'placeholder'  => 'Acción específica',
 			'autocomplete' => 'off',
+			'data-parsley-maxlength' => '100',
+			'data-parsley-maxlength-message' => 'La acción específica debe tener como máximo 100 caracteres'	
 			]) !!}  	
 	</div>	
 </div>

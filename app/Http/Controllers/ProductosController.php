@@ -14,7 +14,8 @@ class ProductosController extends Controller
     private $repositorio;
 
 	public function __construct(ProductoRepositoryInterface $repositorio)
-	{		    
+	{		   
+        $this->middleware('auth'); 
 		$this->repositorio = $repositorio;        
 	}
 
