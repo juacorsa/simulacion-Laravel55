@@ -5,8 +5,10 @@
 	<h2><i class="fa fa-users" aria-hidden="true"></i> Gestión de materias primas</h2>
 	<p>
 	    A continuación se muestran todas las materias primas registradas en la base de datos, ordenadas alfabéticamente.
-		<span class="pull-right"><a href="{{ route('materiaprima.create') }}" class="btn btn-primary">
+    	@if (Auth::user()->isAdmin())
+	 		<span class="pull-right"><a href="{{ route('materiaprima.create') }}" class="btn btn-primary">
 	    	<i class="fa fa-plus"></i> Registrar una nueva materia prima</a></span>
+		@endif		
 	</p>
 	<br>
 	<div class="row">
@@ -14,7 +16,9 @@
 			<table id="tabla" class="table table-bordered item">
 				<thead>
 					<tr>
-						<td class="no-sort">Editar</td>						
+						@if (Auth::user()->isAdmin())
+							<td class="no-sort">Editar</td>						
+						@endif
 						<td>Nombre</td>
 						<td>Stock (kg)</td>
 						<td>Stock Mín. (kg)</td>
@@ -28,9 +32,11 @@
 				<tbody>
 					@foreach ($materiasPrimas as $materiaPrima)
 					<tr>
-						<td>
-							<a class="btn btn-primary" href="{{ route('materiaprima.edit', $materiaPrima) }}">
-								<i class="fa fa-bars"></i></a></td>						
+    					@if (Auth::user()->isAdmin())						
+							<td>
+								<a class="btn btn-primary" href="{{ route('materiaprima.edit', $materiaPrima) }}">
+									<i class="fa fa-bars"></i></a></td>						
+						@endif								
 						<td>{{ $materiaPrima->nombre }}</td>							
 						<td class="text-center">{{ $materiaPrima->stock }}</td>							
 						<td class="text-center">{{ $materiaPrima->stock_minimo }}</td>							
@@ -44,7 +50,7 @@
 				</tbody>
 			</table>
 		</div>
-	</div>
+	</div>	
 
 @section('scripts')
 	@parent    	
@@ -58,7 +64,6 @@
 				]		 					     
 		  	});		  
 		 </script>    	    	
-    @stop   
-
+    @stop 
 
 @endsection

@@ -5,8 +5,10 @@
 	<h2><i class="fa fa-users" aria-hidden="true"></i> Gestión de productos</h2>
 	<p>
 	    A continuación se muestran todos los productos registrados en la aplicación, ordenados alfabéticamente.
-		<span class="pull-right"><a href="{{ route('producto.create') }}" class="btn btn-primary">
-	    	<i class="fa fa-plus"></i> Registrar un nuevo producto</a></span>
+	    @if (Auth::user()->isAdmin())						
+			<span class="pull-right"><a href="{{ route('producto.create') }}" class="btn btn-primary">
+		    	<i class="fa fa-plus"></i> Registrar un nuevo producto</a></span>
+	    @endif
 	</p>
 	<br>
 	<div class="row">
@@ -14,7 +16,9 @@
 			<table id="tabla" class="table table-bordered item">
 				<thead>
 					<tr>
-						<td class="no-sort">Editar</td>
+    					@if (Auth::user()->isAdmin())												
+							<td class="no-sort">Editar</td>
+						@endif
 						<td>Código</td>
 						<td>Nombre</td>
 					</tr>
@@ -22,11 +26,13 @@
 				<tbody>
 					@foreach ($productos as $producto)
 					<tr>
-						<td>
-							<a class="btn btn-primary" href="{{ route('producto.edit', $producto) }}">
-								<i class="fa fa-bars"></i>									
-							</a>						
-						</td>
+						@if (Auth::user()->isAdmin())
+							<td>
+								<a class="btn btn-primary" href="{{ route('producto.edit', $producto) }}">
+									<i class="fa fa-bars"></i>									
+								</a>						
+							</td>
+						@endif
 						<td class="text-center">{{ $producto->codigo }}</td>							
 						<td>{{ $producto->nombre }}</td>							
 					</tr>

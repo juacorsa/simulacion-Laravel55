@@ -22,8 +22,7 @@
 			'required' => '',
 			'data-parsley-type'             => 'digits',
 			'data-parsley-type-message'     => 'El código debe ser un entero positivo',
-  			'data-parsley-required-message' => 'El código es un dato requerido',
-	        'data-parsley-trigger'          => 'change focusout'
+  			'data-parsley-required-message' => 'El código es un dato requerido'	        
 			]) !!}  	
 	</div>	
 </div>
@@ -35,8 +34,7 @@
 			'class' => 'form-control', 
 			'autocomplete' => 'off',
 			'required' 	   => '',
-  			'data-parsley-required-message'  => 'El nombre es un dato requerido',
-	        'data-parsley-trigger'           => 'change focusout',			
+  			'data-parsley-required-message'  => 'El nombre es un dato requerido',	        		
 			'data-parsley-maxlength'         => '80',
 			'data-parsley-maxlength-message' => 'El nombre debe tener como máximo 80 caracteres'		
 			]) !!}  	
@@ -48,8 +46,7 @@
 	<div class="col-sm-10">
 		{!! Form::text('direccion', null, [
 			'class' 	   => 'form-control', 
-			'autocomplete' => 'off',
-			'data-parsley-trigger'   => 'change focusout',
+			'autocomplete' => 'off',			
 			'data-parsley-maxlength' => '80',
 			'data-parsley-maxlength-message' => 'La dirección debe tener como máximo 80 caracteres'		
 			]) !!}  	
@@ -61,8 +58,7 @@
 	<div class="col-sm-10">
 		{!! Form::text('poblacion', null, [
 			'class' => 'form-control', 
-			'autocomplete' => 'off',
-			'data-parsley-trigger'   => 'change focusout',			
+			'autocomplete' => 'off',					
 			'data-parsley-maxlength' => '20',
 			'data-parsley-maxlength-message' => 'El población debe tener como máximo 20 caracteres'					
 			]) !!}  	
@@ -75,8 +71,7 @@
 		{!! Form::text('telefono', null, [
 			'class' => 'form-control', 
 			'autocomplete' => 'off',
-			'data-parsley-maxlength' => '20',
-			'data-parsley-trigger'   => 'change focusout',
+			'data-parsley-maxlength' => '20',			
 			'data-parsley-maxlength-message' => 'El teléfono debe tener como máximo 20 caracteres'					
 			]) !!}  	
 	</div>	
@@ -88,7 +83,6 @@
 		{!! Form::text('fax', null, [
 			'class' => 'form-control', 
 			'autocomplete' => 'off',
-			'data-parsley-trigger'   => 'change focusout',
 			'data-parsley-maxlength' => '20',
 			'data-parsley-maxlength-message' => 'El fax debe tener como máximo 20 caracteres'					
 			]) !!}  	
@@ -100,8 +94,7 @@
 	<div class="col-sm-10">
 		{!! Form::text('contacto', null, [
 			'class' => 'form-control', 
-			'autocomplete' => 'off',
-			'data-parsley-trigger'   => 'change focusout',			
+			'autocomplete' => 'off',					
 			'data-parsley-maxlength' => '40',
 			'data-parsley-maxlength-message' => 'El contacto debe tener como máximo 40 caracteres'				
 			]) !!}  	
@@ -113,8 +106,7 @@
 	<div class="col-sm-10">
 		{!! Form::text('email', null, [
 			'class' => 'form-control', 
-			'autocomplete' => 'off',
-			'data-parsley-trigger'   => 'change focusout',			
+			'autocomplete' => 'off',					
 			'data-parsley-maxlength' => '80',
 			'data-parsley-maxlength-message' => 'El email debe tener como máximo 80 caracteres',
 			'data-parsley-type' 			 => 'email',

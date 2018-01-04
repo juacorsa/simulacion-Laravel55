@@ -5,8 +5,10 @@
 	<h2><i class="fa fa-users" aria-hidden="true"></i> Gestión de proveedores</h2>
 	<p>
 	    A continuación se muestran todos los proveedores registrados en la aplicación, ordenados alfabéticamente.
-		<span class="pull-right"><a href="{{ route('proveedor.create') }}" class="btn btn-primary">
-	    	<i class="fa fa-plus"></i> Registrar un nuevo proveedor</a></span>
+		@if (Auth::user()->isAdmin())						
+			<span class="pull-right"><a href="{{ route('proveedor.create') }}" class="btn btn-primary">
+		    	<i class="fa fa-plus"></i> Registrar un nuevo proveedor</a></span>
+	    @endif
 	</p>
 	<br>
 	<div class="row">
@@ -14,7 +16,9 @@
 			<table id="tabla" class="table table-bordered item">
 				<thead>
 					<tr>
-						<td class="no-sort">Editar</td>
+    					@if (Auth::user()->isAdmin())												
+							<td class="no-sort">Editar</td>
+						@endif
 						<td>Código</td>
 						<td>Nombre</td>
 						<td>Dirección</td>
@@ -28,11 +32,13 @@
 				<tbody>
 					@foreach ($proveedores as $proveedor)
 						<tr>
-							<td>
-								<a class="btn btn-primary" href="{{ route('proveedor.edit', $proveedor) }}">
-									<i class="fa fa-bars"></i>									
-								</a>						
-							</td>
+    						@if (Auth::user()->isAdmin())													
+								<td>
+									<a class="btn btn-primary" href="{{ route('proveedor.edit', $proveedor) }}">
+										<i class="fa fa-bars"></i>									
+									</a>						
+								</td>
+							@endif
 							<td class="text-center">{{ $proveedor->codigo }}</td>							
 							<td>{{ $proveedor->nombre }}</td>							
 							<td>{{ $proveedor->direccion }}</td>							

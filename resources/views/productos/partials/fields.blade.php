@@ -20,8 +20,7 @@
 			'autocomplete' => 'off', 
 			'autofocus'	   => '',
 			'required' 	   => '',
-  			'data-parsley-required-message' => 'El código es un dato requerido',
-	        'data-parsley-trigger'          => 'change focusout',
+  			'data-parsley-required-message' => 'El código es un dato requerido',	        
 			'data-parsley-type'             => 'digits',
 			'data-parsley-type-message'     => 'El código debe ser un entero positivo',
 			]) !!}  	
@@ -35,8 +34,7 @@
 			'class' 	   => 'form-control', 
 			'autocomplete' => 'off',
 			'required'     => '',   			
-  			'data-parsley-required-message'  => 'El nombre es un dato requerido',
-	        'data-parsley-trigger' 	         => 'change focusout',			
+  			'data-parsley-required-message'  => 'El nombre es un dato requerido',	        			
 			'data-parsley-maxlength'         => '100',
 			'data-parsley-maxlength-message' => 'El nombre debe tener como máximo 100 caracteres'
 			]) !!}  	

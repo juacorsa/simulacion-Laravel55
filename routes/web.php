@@ -4,6 +4,7 @@ Route::get('/', function () {
     return view('auth.login');
 });
 
+
 // Rutas de proveedores
 Route::get('/proveedores', 'ProveedoresController@index')->name('proveedores.index');
 Route::get('/proveedor', 'ProveedoresController@create')->name('proveedor.create');

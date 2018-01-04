@@ -9,6 +9,7 @@ use App\Http\Requests\MateriaPrimaRequest;
 use App\Mensaje;
 use App\FlashMessage;
 use Exception;
+use Illuminate\Support\Facades\Auth;
 
 class MateriaPrimasController extends Controller
 {
@@ -30,58 +31,77 @@ class MateriaPrimasController extends Controller
 
 	public function create()
 	{		
-		$proveedores = $this->repoProveedores->obtenerProveedoresPluck();
-		return view('materiasprimas.create', compact('proveedores'));
+        if (Auth::user()->isAdmin()) 
+        {
+		  $proveedores = $this->repoProveedores->obtenerProveedoresPluck();
+		  return view('materiasprimas.create', compact('proveedores'));
+        }
+        else             
+            return view('auth.deny');
 	}
 
 	public function store(MateriaPrimaRequest $request)
 	{
-		$datos = $request->only(['nombre', 'stock', 'stock_minimo', 'precio', 'reanalisis', 
-			'lote', 'accion', 'proveedor_id']);
-
-        try
+        if (Auth::user()->isAdmin()) 
         {
-            $this->repoMateriasPrimas->registrarMateriaPrima($datos);            
-            FlashMessage::success(Mensaje::MATERIA_PRIMA_REGISTRADA, Mensaje::ENHORABUENA);
-         	return back();
+    		$datos = $request->only(['nombre', 'stock', 'stock_minimo', 'precio', 'reanalisis', 
+    			'lote', 'accion', 'proveedor_id']);
+
+            try
+            {
+                $this->repoMateriasPrimas->registrarMateriaPrima($datos);            
+                FlashMessage::success(Mensaje::MATERIA_PRIMA_REGISTRADA, Mensaje::ENHORABUENA);
+             	return back();
+            }
+            catch(Exception $e)
+            {    	
+              	FlashMessage::error(Mensaje::MATERIA_PRIMA_NO_REGISTRADA, Mensaje::ERROR);            
+                return back();			
+            }		
         }
-        catch(Exception $e)
-        {    	
-          	FlashMessage::error(Mensaje::MATERIA_PRIMA_NO_REGISTRADA, Mensaje::ERROR);            
-            return back();			
-        }		
+        else
+            return view('auth.deny');
 	}
 
 	public function edit($id)
 	{
-        $materiaPrima = $this->repoMateriasPrimas->obtenerMateriaPrima($id);       
-
-        if (!$materiaPrima) 
+        if (Auth::user()->isAdmin()) 
         {
-            FlashMessage::error(Mensaje::MATERIA_PRIMA_NO_ENCONTRADA, Mensaje::ERROR);                        
-            return back();            
+            $materiaPrima = $this->repoMateriasPrimas->obtenerMateriaPrima($id);       
+
+            if (!$materiaPrima) 
+            {
+                FlashMessage::error(Mensaje::MATERIA_PRIMA_NO_ENCONTRADA, Mensaje::ERROR);                        
+                return back();            
+            }
+            
+    		$proveedores = $this->repoProveedores->obtenerProveedoresPluck();        
+            return view('materiasprimas.edit', compact('materiaPrima', 'proveedores'));              		
         }
-        
-		$proveedores = $this->repoProveedores->obtenerProveedoresPluck();        
-        return view('materiasprimas.edit', compact('materiaPrima', 'proveedores'));              		
+        else
+            return view('auth.deny');
 	}
 
 	public function update(MateriaPrimaRequest $request)
 	{
-    	$datos = $request->only(['nombre', 'stock', 'stock_minimo', 'precio', 'reanalisis', 
-			'lote', 'accion', 'proveedor_id', 'id']);
+        if (Auth::user()->isAdmin()) 
+        {        
+        	$datos = $request->only(['nombre', 'stock', 'stock_minimo', 'precio', 'reanalisis', 
+    			'lote', 'accion', 'proveedor_id', 'id']);
 
-        try
-        {
-            $this->repoMateriasPrimas->actualizarMateriaPrima($datos);
-            FlashMessage::success(Mensaje::MATERIA_PRIMA_ACTUALIZADA, Mensaje::ENHORABUENA);            
-            return back();
+            try
+            {
+                $this->repoMateriasPrimas->actualizarMateriaPrima($datos);
+                FlashMessage::success(Mensaje::MATERIA_PRIMA_ACTUALIZADA, Mensaje::ENHORABUENA);            
+                return back();
+            }
+            catch(Exception $e)
+            {
+                FlashMessage::error(Mensaje::MATERIA_PRIMA_NO_ACTUALIZADA, Mensaje::ERROR);            
+                return back();
+            }        		
         }
-        catch(Exception $e)
-        {
-            FlashMessage::error(Mensaje::MATERIA_PRIMA_NO_ACTUALIZADA, Mensaje::ERROR);            
-            return back();
-        }        		
+        else
+            return view('auth.deny');
 	}
-
 }
